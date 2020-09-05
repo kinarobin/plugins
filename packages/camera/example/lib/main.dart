@@ -9,10 +9,15 @@ import 'dart:io';
 
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:video_player/video_player.dart';
 
 class CameraExampleHome extends StatefulWidget {
+
+  // 注册一个通知
+  static const EventChannel eventChannel = const EventChannel('com.pages.your/native_post');
+
   @override
   _CameraExampleHomeState createState() {
     return _CameraExampleHomeState();

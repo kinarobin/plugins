@@ -579,10 +579,7 @@ class CameraController extends ValueNotifier<CameraValue> {
     super.dispose();
     if (_creatingCompleter != null) {
       await _creatingCompleter.future;
-      await _channel.invokeMethod<void>(
-        'dispose',
-        <String, dynamic>{'textureId': _textureId},
-      );
+      await _channel.invokeMethod<void>('dispose', <String, dynamic>{'textureId': _textureId},);
       await _eventSubscription?.cancel();
     }
   }
